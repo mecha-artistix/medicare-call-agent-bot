@@ -76,7 +76,7 @@ html_template = '''
                 })
                 .then(response => response.json())
                 .then(data => {
-                    console.log(data)
+                    console.log(data.bot_response)
                     const botMessage = data.response;
                   
                     // Display bot's message
@@ -95,7 +95,6 @@ html_template = '''
 
                     // Add bot's message to conversation
                     conversation.push({"role": "assistant", "content": botMessage});
-                    console.log(conversation)
                 })
                 .catch(error => {
                     console.error('Error:', error);
@@ -165,7 +164,7 @@ def get_response():
             response_part = bot_response        
         
 
-        return jsonify({'response': response_part, 'intent': intent})
+        return jsonify({'response': response_part, 'intent': intent, 'bot_response':bot_response})
         # return jsonify({'response': bot_message})
 
     except Exception as e:

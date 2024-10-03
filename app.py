@@ -49,10 +49,9 @@ html_template = '''
                 userInput.focus();
                 };
             let conversation = [];
-
             sendButton.addEventListener('click', () => {
                 const userText = userInput.value;
-                if (userText.trim() === '') return;
+                // if (userText.trim() === '') return;
 
                 // Display user's message
                 const userMessageDiv = document.createElement('div');
